@@ -1,7 +1,7 @@
 # Vasar
 **The official core system for Vasar/Colossus.**
 
-I developed this core for the intention of private use, so everything is hard coded. I suggest understanding [PHP](https://www.php.net/) and [PocketMine-MP](https://github.com/pmmp/PocketMine-MP) before attempting to make changes.
+I (Warro/Ghezin) developed this core for the intention of private use, so everything is hard coded.
 
 Enjoy. ❤️️
 
@@ -12,16 +12,16 @@ Enjoy. ❤️️
   - Duration management
   - Spectators
 - [x] Party system
-  - Maximum membeers is based on rank (lowest = 8, highest = 20)
+  - Maximum members is based on rank (lowest = 8, highest = 20)
   - Manage privacy (require an invitation to join or public)
   - Manage members
   - Party duels
   - Party chat (use `*` before your message)
-- [x] Various statistical trackings (of use and deprecated)
+- [x] Various statistical tracking (of use and deprecated)
   - Kills
   - Deaths
   - KDR
-  - Killstreak (current and best)
+  - Kill-streak (current and best)
   - Elo
   - Levels
 - [x] Scoreboards
@@ -38,13 +38,13 @@ Enjoy. ❤️️
   - Mute
   - All bans are carried out through both an IP and client-id blacklisting
   - Notifications on rank changes, ban/mute/rank expirations, gamemode changes, anti-cheat alerts
-  - Staff chat (use `!` before your message)
-- [x] Anti-Cheat (very limited)
+  - Staff chat (use `+` before your message)
+- [x] Anti-Cheat
   - Reach
   - CPS
   - High ping
-- [x] Bots (very unstable, should be left alone)
-- [x] Discord integration (very unstable, should be left alone)
+- [x] Bots
+- [x] Discord integration
 
 ## Config
 - [x] Arena Config
@@ -80,8 +80,10 @@ duel-arenas:
           
         # Configure what gamemode this duel map is for.
         # Gamemodes: nodebuff, gapple, fist, sumo, combo
+        # Bots: easy, medium, hard, hacker.
         modes:
           - nodebuff
+          - easy
 ...
 ```
 
@@ -92,9 +94,9 @@ duel-arenas:
 # You can name this whatever you want.
 topkills:
 
-    x: 4 #x coord where the floatingtext spawns in.
-    y: 58 #y coord where the floatingtext spawns in.
-    z: -20 #z coord where the floatingtext spawns in.
+    x: 1 #x coord where the floatingtext spawns in.
+    y: 1 #y coord where the floatingtext spawns in.
+    z: 1 #z coord where the floatingtext spawns in.
     
     # The Title of the floating text.
     title: "Top Kills"
@@ -106,9 +108,9 @@ topkills:
     text: "{doubleline}{topkills}"
     
     # The world where the floating text spawns in.
-    level: lobby
+    level: leaderboardworld
     
 ...
 ```
 
-##### Developed by Ghezin aka Wqrro.
+##### Developed by Ghezin/Wqrro.
