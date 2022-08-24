@@ -4,31 +4,26 @@ declare(strict_types=1);
 
 namespace Wqrro\discord;
 
-use Wqrro\tasks\DiscordTask;
 use pocketmine\Server;
+use Wqrro\tasks\DiscordTask;
 
-class Webhook
-{
+class Webhook{
 
-    protected $url;
+	protected $url;
 
-    public function __construct(string $url)
-    {
-        $this->url = $url;
-    }
+	public function __construct(string $url){
+		$this->url = $url;
+	}
 
-    public function getURL(): string
-    {
-        return $this->url;
-    }
+	public function getURL() : string{
+		return $this->url;
+	}
 
-    public function isValid(): bool
-    {
-        return filter_var($this->url, FILTER_VALIDATE_URL) !== false;
-    }
+	public function isValid() : bool{
+		return filter_var($this->url, FILTER_VALIDATE_URL) !== false;
+	}
 
-    public function send(Message $message): void
-    {
-        Server::getInstance()->getAsyncPool()->submitTask(new DiscordTask($this, $message));
-    }
+	public function send(Message $message) : void{
+		Server::getInstance()->getAsyncPool()->submitTask(new DiscordTask($this, $message));
+	}
 }
